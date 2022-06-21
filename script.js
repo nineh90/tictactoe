@@ -1,8 +1,9 @@
 let matchfield = [];
+let winner;
 let currentPlayer = 'circle';
 
-function fillMatchField(id){
-    matchfield[id] = currentPlayer;
+function fillMatchField(name){
+    matchfield[name] = currentPlayer;
     
     if(currentPlayer == 'circle'){
         currentPlayer = 'cross';
@@ -28,7 +29,7 @@ function drawCurrentPlayer(){
 }
 
 function checkWinnerHorizontal(){
-    let winner;
+    
     if(matchfield[0] == matchfield[1] && matchfield[1] == matchfield[2] && matchfield[0]){
         winner = matchfield[0];
     }  
@@ -38,11 +39,11 @@ function checkWinnerHorizontal(){
     if(matchfield[6] == matchfield[7] && matchfield[7] == matchfield[8] && matchfield[6]){
         winner = matchfield[6];
     }
-    console.log('Gewonnen');
+    console.log(winner);
 }    
 
 function checkWinnerVertical(){
-    let winner;
+    
     if(matchfield[0] == matchfield[3] && matchfield[3] == matchfield[6] && matchfield[0]){
         winner = matchfield[0];
     }
@@ -52,16 +53,16 @@ function checkWinnerVertical(){
     if(matchfield[2] == matchfield[5] && matchfield[5] == matchfield[8] && matchfield[2]){
         winner = matchfield[2];
     }
-    console.log('Gewonnen');
+    console.log(winner);
 }
 
 function checkWinnerDiagonal(){
-    let winner;
+    
     if(matchfield[0] == matchfield[4] && matchfield[4] == matchfield[8] && matchfield[0]){
         winner = matchfield[0];
     }
     if(matchfield[2] == matchfield[4] && matchfield[4] == matchfield[6] && matchfield[2]){
         winner = matchfield[2];
     }
-    console.log('Gewonnen');
+    console.log(winner);
 }
