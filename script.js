@@ -2,8 +2,8 @@ let matchfield = [];
 let winner;
 let currentPlayer = 'circle';
 
-function fillMatchField(name){
-    matchfield[name] = currentPlayer;
+function fillMatchField(player){
+    matchfield[player] = currentPlayer;
     
     if(currentPlayer == 'circle'){
         currentPlayer = 'cross';

@@ -49,12 +49,14 @@ height: 60px;
 }
 
 .game-container{
+  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
   background-color: rgba(114, 254, 55, 0.5);
-  display: flex;
+ 
 }
 
 .game-content{
@@ -65,3 +67,22 @@ height: 60px;
   justify-content: center;
   display: flex;
 }
+
+.current-player{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: bolder;
+  color: white;
+  font-size: 23px;
+}
+
+.player{
+  width: 45px;
+}
+
+.w-100{
+  width: 100%;
+}
+
+
