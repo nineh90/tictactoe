@@ -14,7 +14,6 @@ function fillMatchField(player){
     checkWinnerHorizontal();
     checkWinnerVertical();
     checkWinnerDiagonal();   
-    console.log(matchfield);
 }
 
 function drawCurrentPlayer(){
@@ -39,11 +38,13 @@ function checkWinnerHorizontal(){
     if(matchfield[6] == matchfield[7] && matchfield[7] == matchfield[8] && matchfield[6]){
         winner = matchfield[6];
     }
-    console.log(winner);
+    if (winner) {
+        showWinner();
+    }
 }    
 
-function checkWinnerVertical(){
-    
+function checkWinnerVertical(){    
+    if (winner) { return;} 
     if(matchfield[0] == matchfield[3] && matchfield[3] == matchfield[6] && matchfield[0]){
         winner = matchfield[0];
     }
@@ -52,17 +53,33 @@ function checkWinnerVertical(){
     }
     if(matchfield[2] == matchfield[5] && matchfield[5] == matchfield[8] && matchfield[2]){
         winner = matchfield[2];
+    }    
+    if (winner) {
+        showWinner();
     }
-    console.log(winner);
 }
 
 function checkWinnerDiagonal(){
-    
+    if (winner) { return;} 
     if(matchfield[0] == matchfield[4] && matchfield[4] == matchfield[8] && matchfield[0]){
         winner = matchfield[0];
     }
     if(matchfield[2] == matchfield[4] && matchfield[4] == matchfield[6] && matchfield[2]){
         winner = matchfield[2];
     }
-    console.log(winner);
+    if (winner) {
+        showWinner();
+    }
+}
+
+function showWinner() {
+    console.log("GRATULIERE: " + winner);
+    document.getElementById('startScreen').classList.add('d-flex');
+    document.getElementById('startScreen').classList.remove('d-none');
+    matchfield = [];
+}
+
+function hideStartScreen() {
+    document.getElementById('startScreen').classList.remove('d-flex');
+    document.getElementById('startScreen').classList.add('d-none');
 }

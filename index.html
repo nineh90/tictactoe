@@ -9,7 +9,16 @@
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
+
     <div class="game-container w-100">
+
+        <div id="startScreen" class="d-flex gamestart-image">
+            <div class="position-relative">
+                <img src="./img/gamestart1.png" alt="">
+                <div class="click-container position-absolute" onclick="hideStartScreen()"></div>
+            </div>
+        </div>
+
         <div class="current-player">
             <img class="player" src="./img/circle.png" alt="">
             <p>Player One</p>
