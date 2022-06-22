@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <script src="script.js"></script>
     <title>Tic-Tac-Toe</title>
 </head>
@@ -16,6 +19,18 @@
             <div class="position-relative">
                 <img src="./img/gamestart1.png" alt="">
                 <div class="click-container position-absolute" onclick="hideStartScreen()"></div>
+            </div>
+        </div>
+        
+        <div id="endScreen" class="d-none gamestart-image w-100">
+            <div class="position-relative">
+                <img src="./img/gameover.png" alt="">
+                <div onclick="hideEndScreen()">
+                    <a id="newStart" class="new-start">NEUSTART</a>
+                </div> 
+                <div>
+                    <a class="reset">RESET</a>
+                </div>    
             </div>
         </div>
 

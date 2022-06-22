@@ -4,19 +4,21 @@ let currentPlayer = 'circle';
 
 function fillMatchField(player){
     matchfield[player] = currentPlayer;
-    
-    if(currentPlayer == 'circle'){
-        currentPlayer = 'cross';
-    }else{
-        currentPlayer = 'circle';
-    }
+    if(currentPlayer){
+        if(currentPlayer == 'circle'){
+            currentPlayer = 'cross';
+        }else{
+            currentPlayer = 'circle';
+        }
+        
     drawCurrentPlayer(); 
     checkWinnerHorizontal();
     checkWinnerVertical();
-    checkWinnerDiagonal();   
+    checkWinnerDiagonal(); 
+    }  
 }
 
-function drawCurrentPlayer(){
+function drawCurrentPlayer(player){
     for (let i = 0; i < matchfield.length; i++) {
         if (matchfield[i] == 'circle'){
             document.getElementById('circle-' + i).classList.remove('d-none');
@@ -39,7 +41,7 @@ function checkWinnerHorizontal(){
         winner = matchfield[6];
     }
     if (winner) {
-        showWinner();
+        gameOver();
     }
 }    
 
@@ -55,7 +57,7 @@ function checkWinnerVertical(){
         winner = matchfield[2];
     }    
     if (winner) {
-        showWinner();
+        gameOver();
     }
 }
 
@@ -68,15 +70,23 @@ function checkWinnerDiagonal(){
         winner = matchfield[2];
     }
     if (winner) {
-        showWinner();
+        gameOver();
     }
 }
 
-function showWinner() {
+function gameOver() {
     console.log("GRATULIERE: " + winner);
+    document.getElementById('endScreen').classList.add('d-flex');
+    document.getElementById('endScreen').classList.remove('d-none');
+    matchfield = [];
+
+}
+
+function hideEndScreen(){
+    document.getElementById('endScreen').classList.remove('d-flex');
+    document.getElementById('endScreen').classList.add('d-none');
     document.getElementById('startScreen').classList.add('d-flex');
     document.getElementById('startScreen').classList.remove('d-none');
-    matchfield = [];
 }
 
 function hideStartScreen() {
