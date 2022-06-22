@@ -25,17 +25,17 @@
         <div id="endScreen" class="d-none gamestart-image w-100">
             <div class="position-relative">
                 <img src="./img/gameover.png" alt="">
-                <div onclick="hideEndScreen()">
+                <div onclick="newStart()">
                     <a id="newStart" class="new-start">NEUSTART</a>
                 </div> 
                 <div>
-                    <a class="reset">RESET</a>
+                    <span id="gameWinner" class="winner"></span>
                 </div>    
             </div>
         </div>
 
-        <div class="current-player">
-            <img class="player" src="./img/circle.png" alt="">
+        <div id="currentPlayerCircle"  class="current-player inactive">
+            <img class="player-one" src="./img/circle.png" alt="">
             <p>Player One</p>
         </div>
         <div class="game-content">
@@ -84,8 +84,8 @@
                 </tr>
             </table>
         </div> 
-        <div class="current-player">
-            <img class="player" src="./img/crossed.png" alt="">
+        <div id="currentPlayerCross" class="current-player inactive">
+            <img class="player-two" src="./img/crossed.png" alt="">
             <p>Player Two</p>
         </div>   
     </div>    

@@ -90,10 +90,23 @@ table tr td:last-child {
   align-items: center;
   font-weight: bolder;
   font-size: 23px;
+  color: green;
 }
 
-.player{
-  width: 45px;
+.inactive{
+  opacity: 0.5;
+  color: red;
+}
+
+.player-one{
+  width: 36px;
+  margin: 10px;
+}
+
+.player-two{
+  width: 36px;
+  margin: 10px;
+  filter: invert(1);
 }
 
 .w-100{
@@ -130,13 +143,14 @@ table tr td:last-child {
   cursor: pointer;
 }
 
-.reset{
+.winner{
   position: absolute;
-  top: 34px;
-  right: 38px;
-  color: white;
-  font-size: 33px;
+  top: 70px;
+  right: 33px;
+  color: red;
+  font-size: 28px;
   font-weight: bolder;
   font-family: 'Shadows Into Light', cursive;
-  cursor: pointer;
+  cursor: pointer
 }
+

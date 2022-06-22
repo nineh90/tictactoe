@@ -3,22 +3,32 @@ let winner;
 let currentPlayer = 'circle';
 
 function fillMatchField(player){
-    matchfield[player] = currentPlayer;
-    if(currentPlayer){
-        if(currentPlayer == 'circle'){
-            currentPlayer = 'cross';
-        }else{
-            currentPlayer = 'circle';
-        }
-        
+    if (!matchfield[player]){
+        matchfield[player] = currentPlayer;
+        if(currentPlayer){
+            if(currentPlayer == 'circle'){
+                currentPlayer = 'cross';
+                document.getElementById('currentPlayerCircle').classList.add('inactive');
+                document.getElementById('currentPlayerCross').classList.remove('inactive');
+            }else{
+                currentPlayer = 'circle';
+                document.getElementById('currentPlayerCross').classList.add('inactive');
+                document.getElementById('currentPlayerCircle').classList.remove('inactive');
+                }
+            }  
+            checkForWinner();  
+        }        
+}
+
+function checkForWinner(){ 
     drawCurrentPlayer(); 
     checkWinnerHorizontal();
     checkWinnerVertical();
-    checkWinnerDiagonal(); 
-    }  
+    checkWinnerDiagonal();
+    noOneHasWon();
 }
 
-function drawCurrentPlayer(player){
+function drawCurrentPlayer(){
     for (let i = 0; i < matchfield.length; i++) {
         if (matchfield[i] == 'circle'){
             document.getElementById('circle-' + i).classList.remove('d-none');
@@ -41,7 +51,7 @@ function checkWinnerHorizontal(){
         winner = matchfield[6];
     }
     if (winner) {
-        gameOver();
+       setTimeout(gameOver, 1000);
     }
 }    
 
@@ -57,7 +67,7 @@ function checkWinnerVertical(){
         winner = matchfield[2];
     }    
     if (winner) {
-        gameOver();
+        setTimeout(gameOver, 1000);
     }
 }
 
@@ -70,24 +80,46 @@ function checkWinnerDiagonal(){
         winner = matchfield[2];
     }
     if (winner) {
-        gameOver();
+        setTimeout(gameOver, 1000);
     }
 }
 
+function noOneHasWon(){
+        if(matchfield[0] &&matchfield[1] && matchfield[2] && matchfield[3] && matchfield[4] && matchfield[5] && matchfield[6] && matchfield[7]){ 
+            document.getElementById('gameWinner').innerHTML = 'Keiner hat Gewonnen';
+            gameOver(); 
+        } 
+        
+}
+
 function gameOver() {
-    console.log("GRATULIERE: " + winner);
     document.getElementById('endScreen').classList.add('d-flex');
     document.getElementById('endScreen').classList.remove('d-none');
-    matchfield = [];
-
+    playerOneHasWon();
+    playerTwoHasWon();
+    
+    //setTimeout(newStart, 5000);
 }
 
-function hideEndScreen(){
-    document.getElementById('endScreen').classList.remove('d-flex');
-    document.getElementById('endScreen').classList.add('d-none');
-    document.getElementById('startScreen').classList.add('d-flex');
-    document.getElementById('startScreen').classList.remove('d-none');
+function playerOneHasWon(){
+    if(winner == "circle"){
+    document.getElementById('gameWinner').innerHTML = 'Spieler 1 hat Gewonnen';
+    }
 }
+function playerTwoHasWon(){
+    if(winner == "cross"){
+    document.getElementById('gameWinner').innerHTML = 'Spieler 2 hat Gewonnen';
+    }
+}
+
+function noWinnerAccessible(){
+    document.getElementById('gameWinner').innerHTML = 'Keiner hat Gewonnen';
+}
+
+function newStart(){
+    window.location.reload();
+}
+
 
 function hideStartScreen() {
     document.getElementById('startScreen').classList.remove('d-flex');
