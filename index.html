@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
@@ -17,14 +18,14 @@
 
         <div id="startScreen" class="d-flex gamestart-image">
             <div class="position-relative">
-                <img src="./img/gamestart1.png" alt="">
+                <img class="start-image" src="./img/gamestart1.png" alt="">
                 <div class="click-container position-absolute" onclick="hideStartScreen()"></div>
             </div>
         </div>
         
-        <div id="endScreen" class="d-none gamestart-image w-100">
+        <div id="endScreen" class="d-none gamestart-image  w-100">
             <div class="position-relative">
-                <img src="./img/gameover.png" alt="">
+                <img class="start-image" src="./img/gameover.png" alt="">
                 <div onclick="newStart()">
                     <a id="newStart" class="new-start">NEUSTART</a>
                 </div> 

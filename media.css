@@ -1,0 +1,81 @@
+@media(max-width: 425px){
+    td{
+        width: 115px;
+        height: 115px;
+    }
+    .start-image{
+    width: 100%;
+    }
+   .game-content{
+    width: 415px;
+    height: 415px;
+    border: none;
+   }
+   .new-start{
+    top: 0px;
+    left: 44px;
+   }
+   .winner{
+    top: 41px;
+    right: 25px;
+    font-size: 24px;
+   }
+}
+
+@media(max-width: 375px){
+    td{
+        width: 100px;
+        height: 100px;
+    }
+    .game-content{
+        width: 350px;
+        height: 310px;
+    }
+}
+
+@media(max-width: 320px){
+    .game-content{
+        width: 300px;
+        height: auto;
+    }
+    .player-img{
+        width: 40px;
+        height: 40px; 
+    }
+    .new-start{
+        top: 3px;
+        left: 14px;   
+        font-size: 23px;
+    }
+    .winner {
+        top: 30px;
+        right: 15px;
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 280px){
+    td {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media(max-height: 414px){
+table td {
+    border: 5px solid white;
+    }
+td {
+    width: 70px;
+    height: 70px;
+    }
+.game-content {
+    width: 280px;
+    height: 280px;    
+    } 
+.player-img{
+    width: 35px;
+    height: 35px;
+}       
+
+}   
