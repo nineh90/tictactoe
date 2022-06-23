@@ -1,5 +1,6 @@
 body{
   margin: 0;
+  
 }
 
 .d-none {
@@ -66,6 +67,7 @@ table tr td:last-child {
 }
 
 .game-container{
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,4 +156,39 @@ table tr td:last-child {
   font-family: 'Shadows Into Light', cursive;
   cursor: pointer
 }
+
+.horizontal-line{
+  position: absolute;
+  width: 280px;
+  height: 8px;
+  background-color: rgba(150, 1330, 130, 0.5);
+  transform: scaleX(0.0);
+  z-index: 1;
+}
+
+.vertical{
+  transform: rotate(90deg);
+  transform: scaleX(0.0);
+  transform: scaleY(0.0);
+  transition: transform 1000 ease-in-out;
+}
+
+.diagonal-left-up-down{
+  transform: rotateZ(45deg);
+  transform: scaleX(0.0);
+  width: 350px;
+}
+
+.diagonal-left-down-up{
+  transform: rotate(-45deg) scaleX(0.0);
+ 
+  width: 350px;
+}
+
+.line{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+}
+
 
