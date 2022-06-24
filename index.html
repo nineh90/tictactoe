@@ -14,7 +14,8 @@
 </head>
 <body>
 
-    <div class="game-container w-100">     
+    <div class="game-container w-100">
+    
 
 
         <div id="startScreen" class="d-flex gamestart-image">
@@ -41,7 +42,7 @@
             <p>Player One</p>
         </div>
 
-        <div class="line">
+        <div class="line w-100">
             <div id="line-1" class="horizontal-line" style="top: 21%; left: 22%;"></div> 
             <div id="line-2" class="horizontal-line" style="top: 49.2%; left: 22%"></div> 
             <div id="line-3" class="horizontal-line" style="top: 77.3%; left: 22%"></div> 
@@ -53,7 +54,7 @@
         </div>
 
         <div class="game-content">
-            <table>
+            <table id="table">
                 <tr>
                     <td onclick="fillMatchField(0)">
                         <img id="circle-0" class="player-img d-none" src="./img/circle.png" alt="">
@@ -100,7 +101,7 @@
         </div> 
         <div id="currentPlayerCross" class="current-player inactive">
             <img class="player-two" src="./img/crossed.png" alt="">
-            <p>Player Two</p>
+            <p>Player TWO</p>
         </div>   
     </div>    
     

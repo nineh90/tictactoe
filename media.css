@@ -11,6 +11,9 @@
     height: 415px;
     border: none;
    }
+   .game-container{
+    overflow: hidden;
+   }
    .new-start{
     top: 0px;
     left: 44px;
@@ -20,6 +23,15 @@
     right: 25px;
     font-size: 24px;
    }
+
+   .line{
+    width: 425px;
+    height: 425px;
+   }
+   .horizontal-line{
+    width: 250px;
+   }
+  
 }
 
 @media(max-width: 375px){
@@ -30,6 +42,13 @@
     .game-content{
         width: 350px;
         height: 310px;
+    }
+    .line {
+        width: 380px;
+        height: 380px;
+    }
+    .horizontal-line {
+        width: 220px;
     }
 }
 
@@ -52,12 +71,30 @@
         right: 15px;
         font-size: 18px;
     }
+    .line {
+        width: 375px;
+        height: 375px;
+    }
 }
 
 @media(max-width: 280px){
     td {
         width: 80px;
         height: 80px;
+    }
+    .horizontal-line {
+        width: 160px;
+    }
+    .line {
+        width: 305px;
+        height: 305px;
+    }
+
+}
+
+@media (max-height: 580px){
+    .game-container{
+        flex-direction: row;
     }
 }
 
@@ -76,7 +113,14 @@ td {
 .player-img{
     width: 35px;
     height: 35px;
-}       
+}   
+.line{
+    width: 325px;
+    height: 325px;
+    }   
+.horizontal-line{
+    width: 165px;
+    } 
 
 }   
 
@@ -101,6 +145,15 @@ td {
         top: 57px;
         right: 15px; 
     }  
+    .horizontal-line {
+        width: 155px;
+    }
+
+    .line {
+        width: 280px;
+        height: 280px;
+    }
+
     
 }
 
@@ -130,6 +183,13 @@ td {
         right: 12px;
         font-size: 23px;
     }
+    .line {
+        width: 220px;
+        height: 220px;
+    }
+    .horizontal-line {
+        width: 130px;
+    }
 }
 
 @media(max-height: 280px){
@@ -145,4 +205,13 @@ td {
         width: 160px;
         height: 160px;
     }
+    .horizontal-line{
+        width: 80px;
+        height: 3px;
+    }
+    .line {
+        width: 165px;
+        height: 165px;
+    }
+
 }
