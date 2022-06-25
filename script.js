@@ -2,7 +2,7 @@ let matchfield = [];
 let winner; 
 let currentPlayer = 'circle';
 
-let circleSound = new Audio('./mp3/draw-circle.mp3');
+let sound = new Audio('./mp3/draw-cross.mp3');
 let gameOverSound = new Audio('./mp3/gameover.mp3');
 let noWinnerSound = new Audio('./mp3/no-winner.mp3');
 
@@ -25,12 +25,14 @@ function playerOne(){
     currentPlayer = 'cross';
     document.getElementById('currentPlayerCircle').classList.add('inactive');
     document.getElementById('currentPlayerCross').classList.remove('inactive');
+    sound.play();
 }
 
 function playerTwo(){
     currentPlayer = 'circle';
     document.getElementById('currentPlayerCross').classList.add('inactive');
     document.getElementById('currentPlayerCircle').classList.remove('inactive');
+    sound.play();
    
 }
 
@@ -45,11 +47,12 @@ function checkForWinner(){
 function drawCurrentPlayer(){
     for (let i = 0; i < matchfield.length; i++) {
         if (circle(i)){
-            document.getElementById('circle-' + i).classList.remove('d-none'); 
+            document.getElementById('circle-' + i).classList.remove('d-none');    
         }
         if (cross(i)){
             document.getElementById('cross-' + i).classList.remove('d-none');
         }
+       
     }
 }
 
@@ -99,14 +102,14 @@ function checkWinnerVertical(){
         winner = matchfield[1];
         document.getElementById('line-5').style.transform = 'rotate(90deg) scalex(1)';
     }
-    if(verticalBottom()){
+    if(verticalRight()){
         winner = matchfield[2];
         document.getElementById('line-6').style.transform = 'rotate(90deg) scalex(1)';
     }    
     winnerExist();
 }
 
-function verticalBottom(){
+function verticalRight(){
     return matchfield[2] == matchfield[5] && matchfield[5] == matchfield[8] && matchfield[2]
 }
 
@@ -191,15 +194,15 @@ function winnerIsCross(){
 }
 
 function newStart(){
-    winner = false;
+    winner = 0;
     matchfield = [];
-    closeEnscreenOpenStart();
+    closeEndScreenOpenStart();
     resetPlayer();
     resetWinnerLine();
 }
 
 function resetWinnerLine(){
-    for (let i = 1; i < 8; i++) {
+    for (let i = 1; i < 9; i++) {
         document.getElementById('line-' + i ).style.transform = 'scalex(0)';
     }
 }
@@ -211,7 +214,7 @@ function resetPlayer(){
     }
 }
 
-function closeEnscreenOpenStart(){
+function closeEndScreenOpenStart(){
     document.getElementById('endScreen').classList.remove('d-flex');
     document.getElementById('endScreen').classList.add('d-none');
     document.getElementById('startScreen').classList.add('d-flex');
