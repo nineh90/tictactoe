@@ -118,10 +118,10 @@ function verticalLeft(){
     return matchfield[0] == matchfield[3] && matchfield[3] == matchfield[6] && matchfield[0]
 }
 
-function winnerExist(i){
+function winnerExist(){
     if (winner) {
         setTimeout(gameOver, 500);
-     }
+    }
 }
 
 
@@ -191,7 +191,31 @@ function winnerIsCross(){
 }
 
 function newStart(){
-    window.location.reload();
+    winner = false;
+    matchfield = [];
+    closeEnscreenOpenStart();
+    resetPlayer();
+    resetWinnerLine();
+}
+
+function resetWinnerLine(){
+    for (let i = 1; i < 8; i++) {
+        document.getElementById('line-' + i ).style.transform = 'scalex(0)';
+    }
+}
+
+function resetPlayer(){
+    for (let i = 0; i < 9; i++) {
+        document.getElementById('cross-' + i ).classList.add('d-none'); 
+        document.getElementById('circle-' + i ).classList.add('d-none');
+    }
+}
+
+function closeEnscreenOpenStart(){
+    document.getElementById('endScreen').classList.remove('d-flex');
+    document.getElementById('endScreen').classList.add('d-none');
+    document.getElementById('startScreen').classList.add('d-flex');
+    document.getElementById('startScreen').classList.remove('d-none');
 }
 
 function hideStartScreen() {
